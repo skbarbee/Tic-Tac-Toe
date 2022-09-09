@@ -1,0 +1,67 @@
+body {
+    margin: 30px;
+    font-family: 'Raleway', sans-serif;
+    background-color: #f2ebd7;
+    color: #b6916b
+
+
+}
+
+h1 {
+    font-size: 100px;
+    text-align: center;
+    font-family: 'Homemade Apple', cursive;
+    color: #ffc1b1;
+    
+    
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, auto)
+    padding: 0px;
+    width: 450px;
+    margin: auto;
+    font-family: 'Homemade Apple', cursive;  
+}
+
+.game{
+    width: 150px;
+    height: 150px;
+    border: 4px solid #a5cbaa;
+    display: grid;
+    place-items: center;
+    font-size: 100px;
+}
+
+.gamePlay{
+    place-items: center;
+    border: 5px dashed #c4f0e8;
+    text-align: center;
+    padding: 30px;
+    
+
+
+
+}
+#reset{
+        -webkit-border-radius: 28;
+        -moz-border-radius: 28;
+        border-radius: 28px;
+        text-shadow: 1px 1px 3px #666666;
+        font-family: 'Homemade Apple', cursive;
+        color: #c4f0e8;
+        font-size: 30px;
+        background: #a5cbaa;
+        padding: 10px 20px 10px 20px;
+        border: solid #b6916b 2px;
+        text-decoration: none;
+      }
+      
+#reset:hover {
+        background: #b6916b;
+        text-decoration: none;
+      }
+
+
