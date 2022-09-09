@@ -19,7 +19,7 @@ h1 {
 .grid{
     display: grid;
     grid-template-columns: repeat(3, auto);
-    grid-template-rows: repeat(3, auto)
+    grid-template-rows: repeat(3, auto);
     padding: 0px;
     width: 450px;
     margin: auto;
@@ -40,7 +40,7 @@ h1 {
     border: 5px dashed #c4f0e8;
     text-align: center;
     padding: 30px;
-    
+
 
 
 
