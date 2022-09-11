@@ -1,5 +1,5 @@
 //set variables
-const gameGrid = Array.from(document.querySelectorAll('.game'))
+const gameGrid = document.querySelectorAll('.game')
 const readOut = document.querySelector('#status')
 const restart = document.querySelector('#reset')
 const gameResults = document.querySelector("#results")
@@ -16,6 +16,7 @@ let spaces = Array(9).fill(null)
 
 const startGame = () =>{
     gameGrid.forEach(game => game.addEventListener('click',clickSquare))
+    gameGrid.forEach(game => game.addEventListener('click',gameDraw))
     
 }
 
@@ -26,11 +27,11 @@ function clickSquare(e) {
     if(!spaces[id] && (playerHasWon()== false)){
         spaces[id] = currentPlayer
         e.target.innerText = currentPlayer
-        console.log(e.target.id)
-        console.log(spaces)
+        //console.log(e.target.id, spaces)
+
 //Check those combinations on the board contents after every move.
         if(playerHasWon()!==false){
-            gameResults.innerText=(`${currentPlayer} has won!`)
+            gameResults.innerText=(`${currentPlayer}-player has won!`)
             
         }else if (currentPlayer = currentPlayer == X){
             currentPlayer = O
@@ -68,22 +69,13 @@ const playerHasWon = () => {
         
     }return false
 }
+
+
+
 // Add a reset button that will clear the contents of the board.
-
-    
-
-
 const newGame = () => {
     spaces.fill(null)
-    document.getElementById(0).innerText = (" ")
-    document.getElementById(1).innerText = (" ")
-    document.getElementById(2).innerText = (" ")
-    document.getElementById(3).innerText = (" ")
-    document.getElementById(4).innerText = (" ")
-    document.getElementById(5).innerText = (" ")
-    document.getElementById(6).innerText = (" ")
-    document.getElementById(7).innerText = (" ")
-    document.getElementById(8).innerText = (" ")
+    gameGrid.forEach(game => game.innerText= (" "))
     currentPlayer = X
     readOut.innerText = ("Let's play! X you're first!")
     gameResults.innerText=(" ")
@@ -91,12 +83,26 @@ const newGame = () => {
 
 // Detect draw conditions (ties/cat's game)
 
+const gameDraw = () => {
+    let draw = 0
+    for (i=0; i<spaces.length; i++){
+    console.log(spaces[i])
+        if(spaces[i]!== null ){
+        
+        draw++
+       // console.log(`this is draw ${draw}`)
+    } if ((draw === 9) && (playerHasWon()== false)){
+        gameResults.innerText = ("It's a tie!")
+        console.log("tie")
+        
+    }
+}
+}
 
-
-
+gameDraw();
 
 startGame();
 clickSquare();
 clickSquare();
 newGame();
-gameResults();
+
