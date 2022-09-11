@@ -3,18 +3,20 @@ const gameGrid = Array.from(document.querySelectorAll('.game'))
 const readOut = document.querySelector('#status')
 const restart = document.querySelector('#reset')
 const gameResults = document.querySelector("#results")
-//console.log(restart)
+const drawTracker = document.querySelector(".grid")
+//console.log(drawTracker)
 
 const O = "0"
 const X = "X"
 
 let currentPlayer = X
 let spaces = Array(9).fill(null)
-console.log(spaces)
+
 
 
 const startGame = () =>{
     gameGrid.forEach(game => game.addEventListener('click',clickSquare))
+    
 }
 
 function clickSquare(e) {
@@ -25,15 +27,12 @@ function clickSquare(e) {
         spaces[id] = currentPlayer
         e.target.innerText = currentPlayer
         console.log(e.target.id)
-
+        console.log(spaces)
 //Check those combinations on the board contents after every move.
         if(playerHasWon()!==false){
             gameResults.innerText=(`${currentPlayer} has won!`)
-            let winning_blocks = playerHasWon()
-               
-        }
-
-            else if (currentPlayer = currentPlayer == X){
+            
+        }else if (currentPlayer = currentPlayer == X){
             currentPlayer = O
             //Display a message to indicate which turn is about to be played.
             document.getElementById("status").innerText= (`Player O's turn!`)
@@ -70,6 +69,9 @@ const playerHasWon = () => {
     }return false
 }
 // Add a reset button that will clear the contents of the board.
+
+    
+
 
 const newGame = () => {
     spaces.fill(null)
