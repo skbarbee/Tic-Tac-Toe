@@ -1,5 +1,5 @@
 body {
-    margin: 30px;
+    margin: auto;
     font-family: 'Raleway', sans-serif;
     background-color: #f2ebd7;
     color: #b6916b
@@ -8,10 +8,22 @@ body {
 }
 
 h1 {
-    font-size: 100px;
+    font-size: 90px;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    color: #a5cbaa;
+    padding: 0px;
+    margin: auto;
+    
+    
+}
+#results{
+    font-size: 75px;
     text-align: center;
     font-family: 'Homemade Apple', cursive;
     color: #ffc1b1;
+    padding: -10px;
+    margin: auto;
     
     
 }
